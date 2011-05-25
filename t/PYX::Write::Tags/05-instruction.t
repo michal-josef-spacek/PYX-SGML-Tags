@@ -9,10 +9,10 @@ use Tags::Output::Raw;
 use Test::More 'tests' => 2;
 
 # Directories.
-my $data_dir = File::Object->new->up->dir('data')->serialize;
+my $data_dir = File::Object->new->up->dir('data');
 
 # Include helpers.
-do File::Object->new->up->file('get_stdout.inc')->serialize;
+do File::Object->new->up->file('get_stdout.inc')->s;
 
 # Test.
 my $tags = Tags::Output::Raw->new(
@@ -21,10 +21,10 @@ my $tags = Tags::Output::Raw->new(
 my $obj = PYX::Write::Tags->new(
 	'tags_obj' => $tags,
 );
-get_stdout($obj, "$data_dir/instruction1.pyx");
+get_stdout($obj, $data_dir->file('instruction1.pyx')->s);
 is($tags->flush, '<?target code?>');
 
 # Test.
 $tags->reset;
-get_stdout($obj, "$data_dir/instruction2.pyx");
+get_stdout($obj, $data_dir->file('instruction2.pyx')->s);
 is($tags->flush, "<?target data\\ndata?>");
