@@ -14,6 +14,7 @@ my $data_dir = File::Object->new->up->dir('data')->serialize;
 # Include helpers.
 do File::Object->new->up->file('get_stdout.inc')->serialize;
 
+# Test.
 my $tags = Tags::Output::Raw->new(
 	'xml' => 1,
 );
@@ -23,6 +24,7 @@ my $obj = PYX::Write::Tags->new(
 get_stdout($obj, "$data_dir/comment1.pyx");
 is($tags->flush, '<!--comment-->');
 
+# Test.
 $tags->reset;
 get_stdout($obj, "$data_dir/comment2.pyx");
 is($tags->flush, "<!--comment\ncomment-->");
