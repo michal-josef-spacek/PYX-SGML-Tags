@@ -1,0 +1,39 @@
+#!/usr/bin/env perl
+
+# Pragmas.
+use strict;
+use warnings;
+
+# Modules.
+use PYX::Write::Tags2;
+use Tags2::Output::Indent;
+
+# Arguments.
+if ($#ARGV < 0) {
+	print "Usage: $0 [filename] [-]\n";
+	print "\tfilename\tprocess on filename\n";
+	print "\t-\t\tprocess on stdin\n";
+	exit 1;
+}
+
+# Tags2 object.
+my $tags = Tags2::Output::Indent->new(
+	'output_handler' => \*STDOUT,
+);
+
+# PYX::Write::Tags2 object.
+my $writer = PYX::Write::Tags2->new(
+	'tags_obj' => $tags,
+);
+
+# Parse from stdin.
+if ($ARGV[0] eq '-') {
+	$writer->parse_handler(\*STDIN);
+
+# Parse file.
+} else {
+	$writer->parse_file($ARGV[0]);
+}
+
+$tags->flush;
+print "\n";

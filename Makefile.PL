@@ -20,7 +20,7 @@ WriteMakefile(
 		'ExtUtils::MakeMaker' => 0,
 	},
 	'EXE_FILES' => [
-		'bin/pyx2xml_tags2',
+		'bin/pyx2xml_tags',
 	],
 	'NAME' => 'PYX::Write::Tags',
 	'PREREQ_PM' => {
