@@ -14,7 +14,6 @@ my $data_dir = File::Object->new->up->dir('data')->serialize;
 # Include helpers.
 do File::Object->new->up->file('get_stdout.inc')->serialize;
 
-print "Testing: Char writing.\n";
 my $tags = Tags::Output::Raw->new(
 	'xml' => 1,
 );
