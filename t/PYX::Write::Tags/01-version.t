@@ -3,8 +3,8 @@ use strict;
 use warnings;
 
 # Modules.
-use PYX::Write::Tags2;
+use PYX::Write::Tags;
 use Test::More 'tests' => 1;
 
 # Test.
-is($PYX::Write::Tags2::VERSION, 0.01, 'Version.');
+is($PYX::Write::Tags::VERSION, 0.01, 'Version.');

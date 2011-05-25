@@ -8,8 +8,8 @@ use Test::More 'tests' => 2;
 BEGIN {
 
 	# Test.
-	use_ok('PYX::Write::Tags2');
+	use_ok('PYX::Write::Tags');
 }
 
 # Test.
-require_ok('PYX::Write::Tags2');
+require_ok('PYX::Write::Tags');
