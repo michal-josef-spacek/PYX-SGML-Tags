@@ -1,4 +1,4 @@
-package PYX::Write::Tags2;
+package PYX::Write::Tags;
 
 # Pragmas.
 use strict;
@@ -29,10 +29,10 @@ sub new {
 
 	# If doesn't exist Tags object.
 	if (! $self->{'tags_obj'} 
-		|| (! $self->{'tags_obj'}->isa('Tags2::Output::Indent')
-		&& !  $self->{'tags_obj'}->isa('Tags2::Output::Raw'))) {
+		|| (! $self->{'tags_obj'}->isa('Tags::Output::Indent')
+		&& !  $self->{'tags_obj'}->isa('Tags::Output::Raw'))) {
 
-		err "Bad 'Tags2::Ooutput::Indent' object ".
+		err "Bad 'Tags::Output::Indent' object ".
 			"'$self->{'tags_obj'}'.";
 	}
 
@@ -129,7 +129,7 @@ __END__
 
 =head1 NAME
 
-PYX::Write::Tags2 - TODO
+PYX::Write::Tags - TODO
 
 =head1 SYNOPSIS
 
