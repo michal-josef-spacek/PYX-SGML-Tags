@@ -5,8 +5,8 @@ use strict;
 use warnings;
 
 # Modules.
-use PYX::Write::Tags2;
-use Tags2::Output::Indent;
+use PYX::Write::Tags;
+use Tags::Output::Indent;
 
 # Arguments.
 if ($#ARGV < 0) {
@@ -16,13 +16,13 @@ if ($#ARGV < 0) {
 	exit 1;
 }
 
-# Tags2 object.
-my $tags = Tags2::Output::Indent->new(
+# Tags object.
+my $tags = Tags::Output::Indent->new(
 	'output_handler' => \*STDOUT,
 );
 
-# PYX::Write::Tags2 object.
-my $writer = PYX::Write::Tags2->new(
+# PYX::Write::Tags object.
+my $writer = PYX::Write::Tags->new(
 	'tags_obj' => $tags,
 );
 
