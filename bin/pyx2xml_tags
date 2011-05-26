@@ -9,12 +9,13 @@ use PYX::Write::Tags;
 use Tags::Output::Indent;
 
 # Arguments.
-if ($#ARGV < 0) {
-	print "Usage: $0 [filename] [-]\n";
-	print "\tfilename\tprocess on filename\n";
-	print "\t-\t\tprocess on stdin\n";
+if (@ARGV < 1) {
+	print STDERR "Usage: $0 [filename] [-]\n";
+	print STDERR "\tfilename\tprocess on filename\n";
+	print STDERR "\t-\t\tprocess on stdin\n";
 	exit 1;
 }
+my $filename_or_stdin = $ARGV[0];
 
 # Tags object.
 my $tags = Tags::Output::Indent->new(
@@ -27,12 +28,12 @@ my $writer = PYX::Write::Tags->new(
 );
 
 # Parse from stdin.
-if ($ARGV[0] eq '-') {
+if ($filename_or_stdin eq '-') {
 	$writer->parse_handler(\*STDIN);
 
 # Parse file.
 } else {
-	$writer->parse_file($ARGV[0]);
+	$writer->parse_file($filename_or_stdin);
 }
 
 $tags->flush;
