@@ -29,7 +29,7 @@ WriteMakefile(
 		'PYX::Parser' => 0,
 		'PYX::Utils' => 0,
 	},
-	'VERSION' => '0.01',
+	'VERSION_FROM' => 'Tags.pm',
 	'test' => {
 		'TESTS' => 't/PYX::Write::Tags/*.t',
 	},
