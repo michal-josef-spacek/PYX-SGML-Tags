@@ -22,6 +22,7 @@ WriteMakefile(
 	'EXE_FILES' => [
 		'bin/pyx2xml_tags',
 	],
+	'LICENSE' => 'bsd',
 	'NAME' => 'PYX::Write::Tags',
 	'PREREQ_PM' => {
 		'Class::Utils' => 0.01,
