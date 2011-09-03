@@ -179,10 +179,10 @@ TODO
 
 =head1 DEPENDENCIES
 
-L<Class::Utils(3pm)>,
-L<Error::Pure(3pm)>,
-L<PYX::Parser(3pm)>,
-L<PYX::Utils(3pm)>
+L<Class::Utils>,
+L<Error::Pure>,
+L<PYX::Parser>,
+L<PYX::Utils>
 
 =head1 SEE ALSO
 
