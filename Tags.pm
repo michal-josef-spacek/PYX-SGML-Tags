@@ -168,10 +168,10 @@ TODO
 =head1 ERRORS
 
  Mine:
-   TODO
+         TODO
 
  From Class::Utils::set_params():
-   Unknown parameter '%s'.
+         Unknown parameter '%s'.
 
 =head1 EXAMPLE
 
