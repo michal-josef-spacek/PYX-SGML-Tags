@@ -19,9 +19,6 @@ WriteMakefile(
 	'CONFIGURE_REQUIRES' => {
 		'ExtUtils::MakeMaker' => 0,
 	},
-	'EXE_FILES' => [
-		'bin/pyx2xml_tags',
-	],
 	'LICENSE' => 'bsd',
 	'NAME' => 'PYX::Write::Tags',
 	'PREREQ_PM' => {
