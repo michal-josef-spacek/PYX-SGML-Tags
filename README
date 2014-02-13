@@ -1,0 +1,46 @@
+NAME
+    PYX::Write::Tags - TODO
+
+SYNOPSIS
+    TODO
+
+METHODS
+    "new()" Constructor.
+
+            *       "tags_obj"
+
+                     TODO
+
+    "parse()"
+            TODO
+
+    "parse_file()"
+            TODO
+
+    "parse_handler()"
+            TODO
+
+ERRORS
+     Mine:
+             TODO
+
+     From Class::Utils::set_params():
+             Unknown parameter '%s'.
+
+EXAMPLE
+    TODO
+
+DEPENDENCIES
+    Class::Utils, Error::Pure, PYX::Parser, PYX::Utils
+
+SEE ALSO
+     TODO
+
+AUTHOR
+    Michal Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+VERSION
+    0.01
+
