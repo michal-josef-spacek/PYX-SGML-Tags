@@ -6,7 +6,8 @@ use warnings;
 use File::Object;
 use PYX::Write::Tags;
 use Tags::Output::Raw;
-use Test::More 'tests' => 2;
+use Test::More 'tests' => 3;
+use Test::NoWarnings;
 
 # Directories.
 my $data_dir = File::Object->new->up->dir('data');
