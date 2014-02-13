@@ -139,27 +139,27 @@ TODO
 
 =over 8
 
-=item B<new()>
+=item C<new()>
 
 Constructor.
 
 =over 8
 
-=item * B<tags_obj>
+=item * C<tags_obj>
 
  TODO
 
 =back
 
-=item B<parse()>
+=item C<parse()>
 
 TODO
 
-=item B<parse_file()>
+=item C<parse_file()>
 
 TODO
 
-=item B<parse_handler()>
+=item C<parse_handler()>
 
 TODO
 
