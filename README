@@ -9,26 +9,39 @@ METHODS
 
             *       "tags_obj"
 
-                     TODO
+                     Tags object.
+                     Default value is ''.
+                     It's required.
 
     "parse()"
-            TODO
-
-    "parse_file()"
-            TODO
-
-    "parse_handler()"
-            TODO
-
-ERRORS
-     Mine:
              TODO
 
-     From Class::Utils::set_params():
-             Unknown parameter '%s'.
+    "parse_file()"
+             TODO
+
+    "parse_handler()"
+             TODO
+
+ERRORS
+     new():
+             Bad 'Tags::Output::Indent' object '%s'.
+             From Class::Utils::set_params():
+                     Unknown parameter '%s'.
+
+     TODO PYX::Parser
 
 EXAMPLE
-    TODO
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     # TODO
+
+     # TODO
+
+     # Output:
+     # TODO
 
 DEPENDENCIES
     Class::Utils, Error::Pure, PYX::Parser, PYX::Utils

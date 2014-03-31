@@ -147,35 +147,48 @@ Constructor.
 
 =item * C<tags_obj>
 
- TODO
+ Tags object.
+ Default value is ''.
+ It's required.
 
 =back
 
 =item C<parse()>
 
-TODO
+ TODO
 
 =item C<parse_file()>
 
-TODO
+ TODO
 
 =item C<parse_handler()>
 
-TODO
+ TODO
 
 =back
 
 =head1 ERRORS
 
- Mine:
-         TODO
+ new():
+         Bad 'Tags::Output::Indent' object '%s'.
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
 
- From Class::Utils::set_params():
-         Unknown parameter '%s'.
+ TODO PYX::Parser
 
 =head1 EXAMPLE
 
-TODO
+ # Pragmas.
+ use strict;
+ use warnings;
+
+ # Modules.
+ # TODO
+
+ # TODO
+
+ # Output:
+ # TODO
 
 =head1 DEPENDENCIES
 
