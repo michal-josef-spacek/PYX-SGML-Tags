@@ -201,7 +201,14 @@ L<PYX::Utils>
 
 =head1 SEE ALSO
 
- TODO
+L<PYX>,
+L<PYX::GraphViz>,
+L<PYX::Hist>,
+L<PYX::Parser>,
+L<PYX::Sort>,
+L<PYX::Stack>,
+L<PYX::Utils>,
+L<Task::PYX>.
 
 =head1 AUTHOR
 

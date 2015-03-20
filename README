@@ -47,7 +47,8 @@ DEPENDENCIES
     Class::Utils, Error::Pure, PYX::Parser, PYX::Utils
 
 SEE ALSO
-     TODO
+    PYX, PYX::GraphViz, PYX::Hist, PYX::Parser, PYX::Sort, PYX::Stack,
+    PYX::Utils, Task::PYX.
 
 AUTHOR
     Michal Špaček <mailto:skim@cpan.org>
