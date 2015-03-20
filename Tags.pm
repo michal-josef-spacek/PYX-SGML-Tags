@@ -13,9 +13,6 @@ use PYX::Utils qw(encode);
 # Version.
 our $VERSION = 0.01;
 
-# Global variables.
-use vars qw($tags @tag);
-
 # Constructor.
 sub new {
 	my ($class, @params) = @_;
@@ -38,19 +35,18 @@ sub new {
 
 	# PYX::Parser object.
 	$self->{'pyx_parser'} = PYX::Parser->new(
-		'start_tag' => \&_start_tag,
-		'end_tag' => \&_end_tag,
-		'data' => \&_data,
-		'instruction' => \&_instruction,
-		'attribute' => \&_attribute,
-		'comment' => \&_comment,
+		'callbacks' => {
+			'attribute' => \&_attribute,
+			'comment' => \&_comment,
+			'data' => \&_data,
+			'end_element' => \&_end_element,
+			'instruction' => \&_instruction,
+			'start_element' => \&_start_element,
+		},
+		'non_parser_options' => {
+			'tags_obj' => $self->{'tags_obj'},
+		},
 	);
-
-	# Tags object.
-	$tags = $self->{'tags_obj'};
-
-	# Tag values.
-	@tag = ();
 
 	# Object.
 	return $self;
@@ -77,44 +73,50 @@ sub parse_handler {
 	return;
 }
 
-# Process start of tag.
-sub _start_tag {
-	my (undef, $tag) = @_;
-	$tags->put(['b', $tag]);
+# Process start of element.
+sub _start_element {
+	my ($self, $elem) = @_;
+	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
+	$tags->put(['b', $elem]);
 	return;
 }
 
-# Process end of tag.
-sub _end_tag {
-	my (undef, $tag) = @_;
-	$tags->put(['e', $tag]);
+# Process end of element.
+sub _end_element {
+	my ($self, $elem) = @_;
+	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
+	$tags->put(['e', $elem]);
 	return;
 }
 
 # Process data.
 sub _data {
-	my (undef, $data) = @_;
+	my ($self, $data) = @_;
+	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
 	$tags->put(['d', encode($data)]);
 	return;
 }
 
 # Process attribute.
 sub _attribute {
-	my (undef, $attr, $value) = @_;
+	my ($self, $attr, $value) = @_;
+	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
 	$tags->put(['a', $attr, $value]);
 	return;
 }
 
 # Process instruction tag.
 sub _instruction {
-	my (undef, $target, $code) = @_;
+	my ($self, $target, $code) = @_;
+	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
 	$tags->put(['i', $target, $code]);
 	return;
 }
 
 # Process comments.
 sub _comment {
-	my (undef, $comment) = @_;
+	my ($self, $comment) = @_;
+	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
 	$tags->put(['c', encode($comment)]);
 	return;
 }
