@@ -17,7 +17,7 @@ license: bsd
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: PYX-Write-Tags
+name: PYX-SGML-Tags
 no_index:
   directory:
     - inc
@@ -30,8 +30,8 @@ requires:
   PYX::Utils: 0.01
   perl: 5.6.2
 resources:
-  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=PYX-Write-Tags
-  homepage: https://github.com/tupinek/PYX-Write-Tags
+  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=PYX-SGML-Tags
+  homepage: https://github.com/tupinek/PYX-SGML-Tags
   license: http://opensource.org/licenses/bsd-license.php
-  repository: git://github.com/tupinek/PYX-Write-Tags
+  repository: git://github.com/tupinek/PYX-SGML-Tags
 version: '0.01'

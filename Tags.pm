@@ -1,4 +1,4 @@
-package PYX::Write::Tags;
+package PYX::SGML::Tags;
 
 # Pragmas.
 use strict;
@@ -131,7 +131,7 @@ __END__
 
 =head1 NAME
 
-PYX::Write::Tags - TODO
+PYX::SGML::Tags - TODO
 
 =head1 SYNOPSIS
 

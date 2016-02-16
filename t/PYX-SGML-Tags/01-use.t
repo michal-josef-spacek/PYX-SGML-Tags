@@ -9,8 +9,8 @@ use Test::NoWarnings;
 BEGIN {
 
 	# Test.
-	use_ok('PYX::Write::Tags');
+	use_ok('PYX::SGML::Tags');
 }
 
 # Test.
-require_ok('PYX::Write::Tags');
+require_ok('PYX::SGML::Tags');
