@@ -3,14 +3,11 @@ abstract: TODO
 author:
   - 'Michal Spacek <skim@cpan.org>'
 build_requires:
-  English: 0
   ExtUtils::MakeMaker: 6.36
   File::Object: 0.07
   Tags::Output::Raw: 0
   Test::More: 0
   Test::NoWarnings: 0
-  Test::Pod: 0
-  Test::Pod::Coverage: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.36
 distribution_type: module
@@ -25,6 +22,7 @@ no_index:
   directory:
     - inc
     - t
+    - xt
 requires:
   Class::Utils: 0.05
   Error::Pure: 0.15
