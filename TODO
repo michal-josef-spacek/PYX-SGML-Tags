@@ -1,8 +1,9 @@
 TODO
 ====
 1. default hodnota 'tags_obj' by mohla byt but Tags::Output::Raw nebo undef?
-2. Check na Tags tridy by slo zlepsit.
 3.
 
 Applied
 =======
+2. Check na Tags tridy by slo zlepsit.
+OK [20160216] skim

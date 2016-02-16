@@ -24,7 +24,7 @@ METHODS
 
 ERRORS
      new():
-             Bad 'Tags::Output::Indent' object '%s'.
+             Bad 'Tags::Output::*' object.
              From Class::Utils::set_params():
                      Unknown parameter '%s'.
 

@@ -26,11 +26,9 @@ sub new {
 
 	# If doesn't exist Tags object.
 	if (! $self->{'tags'}
-		|| (! $self->{'tags'}->isa('Tags::Output::Indent')
-		&& !  $self->{'tags'}->isa('Tags::Output::Raw'))) {
+		|| ! $self->{'tags'}->isa('Tags::Output')) {
 
-		err "Bad 'Tags::Output::Indent' object ".
-			"'$self->{'tags'}'.";
+		err "Bad 'Tags::Output::*' object.";
 	}
 
 	# PYX::Parser object.
@@ -172,7 +170,7 @@ Constructor.
 =head1 ERRORS
 
  new():
-         Bad 'Tags::Output::Indent' object '%s'.
+         Bad 'Tags::Output::*' object.
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
 
