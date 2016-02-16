@@ -9,6 +9,7 @@ use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use PYX::Parser;
 use PYX::Utils qw(encode);
+use Tags::Output::Raw;
 
 # Version.
 our $VERSION = 0.01;
@@ -195,7 +196,8 @@ Constructor.
 L<Class::Utils>,
 L<Error::Pure>,
 L<PYX::Parser>,
-L<PYX::Utils>
+L<PYX::Utils>,
+L<Tags::Output::Raw>.
 
 =head1 SEE ALSO
 

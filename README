@@ -44,7 +44,7 @@ EXAMPLE
      # TODO
 
 DEPENDENCIES
-    Class::Utils, Error::Pure, PYX::Parser, PYX::Utils
+    Class::Utils, Error::Pure, PYX::Parser, PYX::Utils, Tags::Output::Raw.
 
 SEE ALSO
     Task::PYX
