@@ -25,7 +25,7 @@ sub new {
 	# Process params.
 	set_params($self, @params);
 
-	# If doesn't exist Tags object.
+	# Check for Tags::Output object.
 	if (! $self->{'tags'}
 		|| ! $self->{'tags'}->isa('Tags::Output')) {
 
