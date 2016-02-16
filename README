@@ -7,10 +7,10 @@ SYNOPSIS
 METHODS
     "new()" Constructor.
 
-            *       "tags_obj"
+            *       "tags"
 
                      Tags object.
-                     Default value is ''.
+                     Default value is Tags::Output::Raw->new.
                      It's required.
 
     "parse()"

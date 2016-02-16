@@ -19,18 +19,18 @@ sub new {
 	my $self = bless {}, $class;
 
 	# Tags object.
-	$self->{'tags_obj'} = '';
+	$self->{'tags'} = Tags::Output::Raw->new;
 
 	# Process params.
 	set_params($self, @params);
 
 	# If doesn't exist Tags object.
-	if (! $self->{'tags_obj'} 
-		|| (! $self->{'tags_obj'}->isa('Tags::Output::Indent')
-		&& !  $self->{'tags_obj'}->isa('Tags::Output::Raw'))) {
+	if (! $self->{'tags'}
+		|| (! $self->{'tags'}->isa('Tags::Output::Indent')
+		&& !  $self->{'tags'}->isa('Tags::Output::Raw'))) {
 
 		err "Bad 'Tags::Output::Indent' object ".
-			"'$self->{'tags_obj'}'.";
+			"'$self->{'tags'}'.";
 	}
 
 	# PYX::Parser object.
@@ -44,7 +44,7 @@ sub new {
 			'start_element' => \&_start_element,
 		},
 		'non_parser_options' => {
-			'tags_obj' => $self->{'tags_obj'},
+			'tags' => $self->{'tags'},
 		},
 	);
 
@@ -76,7 +76,7 @@ sub parse_handler {
 # Process start of element.
 sub _start_element {
 	my ($self, $elem) = @_;
-	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
+	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['b', $elem]);
 	return;
 }
@@ -84,7 +84,7 @@ sub _start_element {
 # Process end of element.
 sub _end_element {
 	my ($self, $elem) = @_;
-	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
+	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['e', $elem]);
 	return;
 }
@@ -92,7 +92,7 @@ sub _end_element {
 # Process data.
 sub _data {
 	my ($self, $data) = @_;
-	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
+	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['d', encode($data)]);
 	return;
 }
@@ -100,7 +100,7 @@ sub _data {
 # Process attribute.
 sub _attribute {
 	my ($self, $attr, $value) = @_;
-	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
+	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['a', $attr, $value]);
 	return;
 }
@@ -108,7 +108,7 @@ sub _attribute {
 # Process instruction tag.
 sub _instruction {
 	my ($self, $target, $code) = @_;
-	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
+	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['i', $target, $code]);
 	return;
 }
@@ -116,7 +116,7 @@ sub _instruction {
 # Process comments.
 sub _comment {
 	my ($self, $comment) = @_;
-	my $tags = $self->{'non_parser_options'}->{'tags_obj'};
+	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['c', encode($comment)]);
 	return;
 }
@@ -147,10 +147,10 @@ Constructor.
 
 =over 8
 
-=item * C<tags_obj>
+=item * C<tags>
 
  Tags object.
- Default value is ''.
+ Default value is Tags::Output::Raw->new.
  It's required.
 
 =back
