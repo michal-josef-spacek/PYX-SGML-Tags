@@ -201,14 +201,13 @@ L<PYX::Utils>
 
 =head1 SEE ALSO
 
-L<PYX>,
-L<PYX::GraphViz>,
-L<PYX::Hist>,
-L<PYX::Parser>,
-L<PYX::Sort>,
-L<PYX::Stack>,
-L<PYX::Utils>,
-L<Task::PYX>.
+=over
+
+=item L<Task::PYX>
+
+Install the PYX modules.
+
+=back
 
 =head1 AUTHOR
 

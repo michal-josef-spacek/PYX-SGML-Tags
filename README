@@ -47,8 +47,8 @@ DEPENDENCIES
     Class::Utils, Error::Pure, PYX::Parser, PYX::Utils
 
 SEE ALSO
-    PYX, PYX::GraphViz, PYX::Hist, PYX::Parser, PYX::Sort, PYX::Stack,
-    PYX::Utils, Task::PYX.
+    Task::PYX
+        Install the PYX modules.
 
 AUTHOR
     Michal Špaček <mailto:skim@cpan.org>
