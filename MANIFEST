@@ -27,6 +27,7 @@ t/data/tag3.pyx
 t/data/tag4.pyx
 t/PYX-SGML-Tags/01-use.t
 t/PYX-SGML-Tags/02-version.t
+t/PYX-SGML-Tags/03-new.t
 t/PYX-SGML-Tags/04-parse_file-char.t
 t/PYX-SGML-Tags/05-parse_file-instruction.t
 t/PYX-SGML-Tags/06-parse_file-comment.t

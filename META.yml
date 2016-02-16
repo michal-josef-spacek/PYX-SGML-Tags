@@ -3,8 +3,11 @@ abstract: TODO
 author:
   - 'Michal Spacek <skim@cpan.org>'
 build_requires:
+  English: 0
+  Error::Pure::Utils: 0.15
   ExtUtils::MakeMaker: 6.36
   File::Object: 0.07
+  Tags::Output::Indent: 0
   Tags::Output::Raw: 0
   Test::More: 0
   Test::NoWarnings: 0
