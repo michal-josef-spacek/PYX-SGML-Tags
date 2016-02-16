@@ -1,6 +1,6 @@
 TODO
 ====
-1. default hodnota 'tags_obj' by mohla byt but Tags::Output::Raw nebo undef?
+1. default hodnota 'tags' by mohla byt but Tags::Output::Raw nebo undef?
 3.
 
 Applied
