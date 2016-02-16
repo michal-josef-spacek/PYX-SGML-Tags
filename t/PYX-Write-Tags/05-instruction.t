@@ -17,7 +17,7 @@ my $tags = Tags::Output::Raw->new(
 	'xml' => 1,
 );
 my $obj = PYX::Write::Tags->new(
-	'tags_obj' => $tags,
+	'tags' => $tags,
 );
 $obj->parse_file($data_dir->file('instruction1.pyx')->s);
 is($tags->flush, '<?target code?>');
