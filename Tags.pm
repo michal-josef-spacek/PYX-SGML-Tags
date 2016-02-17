@@ -145,7 +145,12 @@ PYX::SGML::Tags - TODO
 
 =head1 SYNOPSIS
 
-TODO
+ use PYX::SGML::Tags;
+ my $obj = PYX::SGML::Tags->new(%parameters);
+ $obj->parse($pyx, $out);
+ $obj->parse_file($input_file, $out);
+ $obj->parse_handle($input_file_handler, $out);
+ $obj->finalize;
 
 =head1 METHODS
 
@@ -166,17 +171,31 @@ Constructor.
 
 =back
 
-=item C<parse()>
+=item C<parse($pyx[, $out])>
 
- TODO
+ Parse PYX text or array of PYX text.
+ Output is serialization to SGML by Tags::Output::* module.
+ If $out not present, use 'output_handler'.
+ Returns undef.
 
-=item C<parse_file()>
+=item C<parse_file($input_file[, $out])>
 
- TODO
+ Parse file with PYX data.
+ Output is serialization to SGML.
+ If $out not present, use 'output_handler'.
+ Returns undef.
 
-=item C<parse_handler()>
+=item C<parse_handler($input_file_handler[, $out])>
 
- TODO
+ Parse PYX handler.
+ Output is serialization to SGML.
+ If $out not present, use 'output_handler'.
+ Returns undef.
+
+=item C<finalize()>
+
+ Finalize opened tags, if exists.
+ Returns undef.
 
 =back
 
@@ -187,7 +206,25 @@ Constructor.
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
 
- TODO PYX::Parser
+ parse():
+         From PYX::Parser::parse():
+                 Bad PYX line '%s'.
+         From Tags::Output::Raw::flush():
+                 Cannot write to output handler.
+
+ parse_file():
+         From PYX::Parser::parse_file():
+                 Bad PYX line '%s'.
+                 No input handler.
+         From Tags::Output::Raw::flush():
+                 Cannot write to output handler.
+
+ parse_handler():
+         From PYX::Parser::parse_handler():
+                 Bad PYX line '%s'.
+                 No input handler.
+         From Tags::Output::Raw::flush():
+                 Cannot write to output handler.
 
 =head1 EXAMPLE
 
