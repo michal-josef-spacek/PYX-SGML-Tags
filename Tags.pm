@@ -20,7 +20,9 @@ sub new {
 	my $self = bless {}, $class;
 
 	# Tags object.
-	$self->{'tags'} = Tags::Output::Raw->new;
+	$self->{'tags'} = Tags::Output::Raw->new(
+		'output_handler' => \*STDOUT,
+	);
 
 	# Process params.
 	set_params($self, @params);
@@ -149,7 +151,8 @@ Constructor.
 =item * C<tags>
 
  Tags object.
- Default value is Tags::Output::Raw->new.
+ Can be any of Tags::Output::* objects.
+ Default value is Tags::Output::Raw->new('output_handler' => \*STDOUT).
  It's required.
 
 =back
