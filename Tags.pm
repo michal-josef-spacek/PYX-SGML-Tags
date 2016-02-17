@@ -270,6 +270,10 @@ Install the PYX modules.
 
 =back
 
+=head1 REPOSITORY
+
+L<https://github.com/tupinek/PYX-SGML-Tags>
+
 =head1 AUTHOR
 
 Michal Špaček L<mailto:skim@cpan.org>

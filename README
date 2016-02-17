@@ -100,6 +100,9 @@ SEE ALSO
     Task::PYX
         Install the PYX modules.
 
+REPOSITORY
+    <https://github.com/tupinek/PYX-SGML-Tags>
+
 AUTHOR
     Michal Špaček <mailto:skim@cpan.org>
 
