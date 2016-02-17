@@ -57,6 +57,7 @@ sub new {
 sub parse {
 	my ($self, $pyx, $out) = @_;
 	$self->{'pyx_parser'}->parse($pyx, $out);
+	$self->{'tags'}->flush;
 	return;
 }
 
@@ -64,6 +65,7 @@ sub parse {
 sub parse_file {
 	my ($self, $file, $out) = @_;
 	$self->{'pyx_parser'}->parse_file($file, $out);
+	$self->{'tags'}->flush;
 	return;
 }
 
@@ -71,6 +73,7 @@ sub parse_file {
 sub parse_handler {
 	my ($self, $input_file_handler, $out) = @_;
 	$self->{'pyx_parser'}->parse_handler($input_file_handler, $out);
+	$self->{'tags'}->flush;
 	return;
 }
 
