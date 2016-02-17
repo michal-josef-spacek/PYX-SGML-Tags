@@ -1,6 +1,5 @@
 TODO
 ====
-1. default hodnota 'tags' by mohla byt but Tags::Output::Raw nebo undef?
 3. Pridat testy pro parse().
 4. Pridat testy pro parse_handler().
 5.
@@ -9,3 +8,7 @@ Applied
 =======
 2. Check na Tags tridy by slo zlepsit.
 OK [20160216] skim
+
+1. default hodnota 'tags' by mohla byt but Tags::Output::Raw nebo undef?
+Dal jsem tam Tags::Output::Raw s vystupem na stdout.
+OK [20160217] skim
