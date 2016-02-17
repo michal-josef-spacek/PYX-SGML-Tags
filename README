@@ -1,5 +1,6 @@
 NAME
-    PYX::SGML::Tags - TODO
+    PYX::SGML::Tags - Processing PYX data or file and write as SGML via
+    Tags.
 
 SYNOPSIS
      use PYX::SGML::Tags;

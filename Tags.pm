@@ -141,7 +141,7 @@ __END__
 
 =head1 NAME
 
-PYX::SGML::Tags - TODO
+PYX::SGML::Tags - Processing PYX data or file and write as SGML via Tags.
 
 =head1 SYNOPSIS
 
