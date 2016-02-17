@@ -23,6 +23,7 @@ meta-spec:
 name: PYX-SGML-Tags
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt

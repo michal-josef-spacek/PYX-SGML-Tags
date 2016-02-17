@@ -184,12 +184,24 @@ Constructor.
  use warnings;
 
  # Modules.
- # TODO
+ use PYX::SGML::Tags;
 
- # TODO
+ # Input.
+ my $pyx = <<'END';
+ (element
+ -data
+ )element
+ END
+
+ # Object.
+ my $obj = PYX::SGML::Tags->new;
+
+ # Process.
+ $obj->parse($pyx);
+ print "\n";
 
  # Output:
- # TODO
+ # <element>data</element>
 
 =head1 DEPENDENCIES
 
