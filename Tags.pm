@@ -77,6 +77,12 @@ sub parse_handler {
 	return;
 }
 
+sub finalize {
+	my $self = shift;
+	$self->{'tags'}->finalize;
+	return;
+}
+
 # Process start of element.
 sub _start_element {
 	my ($self, $elem) = @_;
