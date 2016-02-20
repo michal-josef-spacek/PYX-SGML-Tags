@@ -13,6 +13,11 @@ SYNOPSIS
 METHODS
     "new()" Constructor.
 
+            *       "input_encoding"
+
+                     Input encoding.
+                     Default value is 'utf-8'.
+
             *       "tags"
 
                      Tags object.

@@ -19,6 +19,9 @@ sub new {
 	my ($class, @params) = @_;
 	my $self = bless {}, $class;
 
+	# Input encoding.
+	$self->{'input_encoding'} = 'utf-8';
+
 	# Tags object.
 	$self->{'tags'} = Tags::Output::Raw->new(
 		'output_handler' => \*STDOUT,
@@ -44,6 +47,7 @@ sub new {
 			'instruction' => \&_instruction,
 			'start_element' => \&_start_element,
 		},
+		'input_encoding' => $self->{'input_encoding'},
 		'non_parser_options' => {
 			'tags' => $self->{'tags'},
 		},
@@ -161,6 +165,11 @@ PYX::SGML::Tags - Processing PYX data or file and write as SGML via Tags.
 Constructor.
 
 =over 8
+
+=item * C<input_encoding>
+
+ Input encoding.
+ Default value is 'utf-8'.
 
 =item * C<tags>
 

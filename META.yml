@@ -30,7 +30,7 @@ no_index:
 requires:
   Class::Utils: 0.05
   Error::Pure: 0.15
-  PYX::Parser: 0.01
+  PYX::Parser: 0.05
   PYX::Utils: 0.01
   Tags::Output::Raw: 0.04
   perl: 5.6.2

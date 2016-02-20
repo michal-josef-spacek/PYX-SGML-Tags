@@ -20,7 +20,7 @@ readme_from 'Tags.pm';
 recursive_author_tests('xt');
 requires 'Class::Utils' => 0.05;
 requires 'Error::Pure' => 0.15;
-requires 'PYX::Parser' => 0.01;
+requires 'PYX::Parser' => 0.05;
 requires 'PYX::Utils' => 0.01;
 requires 'Tags::Output::Raw' => 0.04;
 requires 'perl' => '5.6.2';
