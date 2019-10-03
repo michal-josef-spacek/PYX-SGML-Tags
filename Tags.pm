@@ -1,17 +1,14 @@
 package PYX::SGML::Tags;
 
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use PYX::Parser;
 use PYX::Utils qw(encode);
 use Tags::Output::Raw;
 
-# Version.
 our $VERSION = 0.03;
 
 # Constructor.
@@ -237,11 +234,9 @@ Constructor.
 
 =head1 EXAMPLE
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use PYX::SGML::Tags;
 
  # Input.

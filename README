@@ -74,11 +74,9 @@ ERRORS
                      Cannot write to output handler.
 
 EXAMPLE
-     # Pragmas.
      use strict;
      use warnings;
 
-     # Modules.
      use PYX::SGML::Tags;
 
      # Input.
