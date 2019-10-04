@@ -1,6 +1,7 @@
 0.03
  - Add EXAMPLE2 to PYX::SGML::Tags.
  - Update Module::Install to 1.19 version.
+ - Update copyright years.
 
 0.02 2016-02-20T23:38:52+01:00
  - Add 'input_encoding' parameter.
