@@ -73,7 +73,7 @@ ERRORS
              From Tags::Output::Raw::flush():
                      Cannot write to output handler.
 
-EXAMPLE
+EXAMPLE1
      use strict;
      use warnings;
 
@@ -88,6 +88,34 @@ EXAMPLE
 
      # Object.
      my $obj = PYX::SGML::Tags->new;
+
+     # Process.
+     $obj->parse($pyx);
+     print "\n";
+
+     # Output:
+     # <element>data</element>
+
+EXAMPLE2
+     use strict;
+     use warnings;
+
+     use PYX::SGML::Tags;
+     use Tags::Output::Indent;
+
+     # Input.
+     my $pyx = <<'END';
+     (element
+     -data
+     )element
+     END
+
+     # Object.
+     my $obj = PYX::SGML::Tags->new(
+             'tags' => Tags::Output::Indent->new(
+                     'output_handler' => \*STDOUT,
+             ),
+     );
 
      # Process.
      $obj->parse($pyx);

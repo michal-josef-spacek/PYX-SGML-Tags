@@ -232,7 +232,7 @@ Constructor.
          From Tags::Output::Raw::flush():
                  Cannot write to output handler.
 
-=head1 EXAMPLE
+=head1 EXAMPLE1
 
  use strict;
  use warnings;
@@ -248,6 +248,35 @@ Constructor.
 
  # Object.
  my $obj = PYX::SGML::Tags->new;
+
+ # Process.
+ $obj->parse($pyx);
+ print "\n";
+
+ # Output:
+ # <element>data</element>
+
+=head1 EXAMPLE2
+
+ use strict;
+ use warnings;
+
+ use PYX::SGML::Tags;
+ use Tags::Output::Indent;
+
+ # Input.
+ my $pyx = <<'END';
+ (element
+ -data
+ )element
+ END
+
+ # Object.
+ my $obj = PYX::SGML::Tags->new(
+         'tags' => Tags::Output::Indent->new(
+                 'output_handler' => \*STDOUT,
+         ),
+ );
 
  # Process.
  $obj->parse($pyx);
