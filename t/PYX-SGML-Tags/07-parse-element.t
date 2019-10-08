@@ -14,28 +14,28 @@ my $obj = PYX::SGML::Tags->new(
 	'tags' => $tags,
 );
 my $pyx_data =<<'END';
-(tag
-)tag
+(element
+)element
 END
 $obj->parse($pyx_data);
-is($tags->flush, "<tag />");
+is($tags->flush, "<element />");
 $tags->reset;
 
 # Test.
 $pyx_data =<<'END';
-(tag
+(element
 Apar val
-)tag
+)element
 END
 $obj->parse($pyx_data);
-is($tags->flush, "<tag par=\"val\" />");
+is($tags->flush, "<element par=\"val\" />");
 $tags->reset;
 
 # Test.
 $pyx_data =<<'END';
-(tag
+(element
 Apar val\nval
-)tag
+)element
 END
 $obj->parse($pyx_data);
-is($tags->flush, "<tag par=\"val\\nval\" />");
+is($tags->flush, "<element par=\"val\\nval\" />");

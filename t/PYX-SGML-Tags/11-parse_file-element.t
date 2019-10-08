@@ -18,14 +18,14 @@ my $obj = PYX::SGML::Tags->new(
 	'tags' => $tags,
 );
 $obj->parse_file($data_dir->file('element1.pyx')->s);
-is($tags->flush, "<tag />");
+is($tags->flush, "<element />");
 
 # Test.
 $tags->reset;
 $obj->parse_file($data_dir->file('element2.pyx')->s);
-is($tags->flush, "<tag par=\"val\" />");
+is($tags->flush, "<element par=\"val\" />");
 
 # Test.
 $tags->reset;
 $obj->parse_file($data_dir->file('element3.pyx')->s);
-is($tags->flush, "<tag par=\"val\\nval\" />");
+is($tags->flush, "<element par=\"val\\nval\" />");
