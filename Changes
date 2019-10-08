@@ -1,5 +1,6 @@
 0.03
  - Add EXAMPLE2 to PYX::SGML::Tags.
+ - Add tests for parse() method.
  - Update Module::Install to 1.19 version.
  - Update copyright years.
  - Update my name to reality.
