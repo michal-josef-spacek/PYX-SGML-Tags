@@ -22,12 +22,12 @@ t/data/char1.pyx
 t/data/char2.pyx
 t/data/comment1.pyx
 t/data/comment2.pyx
+t/data/element1.pyx
+t/data/element2.pyx
+t/data/element3.pyx
+t/data/element4.pyx
 t/data/instruction1.pyx
 t/data/instruction2.pyx
-t/data/tag1.pyx
-t/data/tag2.pyx
-t/data/tag3.pyx
-t/data/tag4.pyx
 t/PYX-SGML-Tags/01-use.t
 t/PYX-SGML-Tags/02-version.t
 t/PYX-SGML-Tags/03-new.t

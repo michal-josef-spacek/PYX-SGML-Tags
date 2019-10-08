@@ -17,15 +17,15 @@ my $tags = Tags::Output::Raw->new(
 my $obj = PYX::SGML::Tags->new(
 	'tags' => $tags,
 );
-$obj->parse_file($data_dir->file('tag1.pyx')->s);
+$obj->parse_file($data_dir->file('element1.pyx')->s);
 is($tags->flush, "<tag />");
 
 # Test.
 $tags->reset;
-$obj->parse_file($data_dir->file('tag2.pyx')->s);
+$obj->parse_file($data_dir->file('element2.pyx')->s);
 is($tags->flush, "<tag par=\"val\" />");
 
 # Test.
 $tags->reset;
-$obj->parse_file($data_dir->file('tag3.pyx')->s);
+$obj->parse_file($data_dir->file('element3.pyx')->s);
 is($tags->flush, "<tag par=\"val\\nval\" />");
