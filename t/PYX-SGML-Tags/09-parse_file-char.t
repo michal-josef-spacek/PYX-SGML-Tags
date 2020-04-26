@@ -18,10 +18,10 @@ my $obj = PYX::SGML::Tags->new(
 	'tags' => $tags,
 );
 $obj->parse_file($data_dir->file('char1.pyx')->s);
-is($tags->flush, "char");
+is($tags->flush, "char", 'Simple character.');
 $tags->reset;
 
 # Test.
 $obj->parse_file($data_dir->file('char2.pyx')->s);
-is($tags->flush, "char\nchar");
+is($tags->flush, "char\nchar", 'Character with newline.');
 $tags->reset;

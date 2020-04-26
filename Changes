@@ -1,4 +1,5 @@
-0.04
+0.04 
+ - Add test comments.
  - Add test for utf-8 characters (in Czech).
  - Add Tags reseting to each test.
  - Test for element renamed to -xml version. Added sgml version.

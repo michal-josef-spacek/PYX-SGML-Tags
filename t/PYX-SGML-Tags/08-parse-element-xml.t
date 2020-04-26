@@ -19,7 +19,7 @@ my $pyx_data = <<'END';
 )element
 END
 $obj->parse($pyx_data);
-is($tags->flush, "<element />");
+is($tags->flush, "<element />", 'Simple element (xml version).');
 $tags->reset;
 
 # Test.
@@ -29,7 +29,8 @@ Apar val
 )element
 END
 $obj->parse($pyx_data);
-is($tags->flush, "<element par=\"val\" />");
+is($tags->flush, "<element par=\"val\" />",
+	'Simple element with attribute (xml version).');
 $tags->reset;
 
 # Test.
@@ -39,7 +40,8 @@ Apar val\nval
 )element
 END
 $obj->parse($pyx_data);
-is($tags->flush, "<element par=\"val\\nval\" />");
+is($tags->flush, "<element par=\"val\\nval\" />",
+	'Simple element with attribute with \n in value (xml version).');
 $tags->reset;
 
 # Test.
@@ -50,5 +52,5 @@ Acíl ředkev
 END
 $obj->parse($pyx_data);
 is($tags->flush, decode_utf8('<čupřina cíl="ředkev" />'),
-	'Parse element with attribute in utf-8.');
+	'Parse element with attribute in utf-8 (xml version).');
 $tags->reset;

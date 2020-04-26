@@ -18,15 +18,17 @@ my $obj = PYX::SGML::Tags->new(
 	'tags' => $tags,
 );
 $obj->parse_file($data_dir->file('element1.pyx')->s);
-is($tags->flush, "<element></element>");
+is($tags->flush, "<element></element>", 'Simple element (sgml version).');
 $tags->reset;
 
 # Test.
 $obj->parse_file($data_dir->file('element2.pyx')->s);
-is($tags->flush, "<element par=\"val\"></element>");
+is($tags->flush, "<element par=\"val\"></element>",
+	'Simple element with attribute (sgml version).');
 $tags->reset;
 
 # Test.
 $obj->parse_file($data_dir->file('element3.pyx')->s);
-is($tags->flush, "<element par=\"val\\nval\"></element>");
+is($tags->flush, "<element par=\"val\\nval\"></element>",
+	'Simple element with attribute with \n in value (sgml version).');
 $tags->reset;

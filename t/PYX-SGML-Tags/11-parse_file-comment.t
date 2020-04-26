@@ -18,10 +18,10 @@ my $obj = PYX::SGML::Tags->new(
 	'tags' => $tags,
 );
 $obj->parse_file($data_dir->file('comment1.pyx')->s);
-is($tags->flush, '<!--comment-->');
+is($tags->flush, '<!--comment-->', 'Simple comment.');
 $tags->reset;
 
 # Test.
 $obj->parse_file($data_dir->file('comment2.pyx')->s);
-is($tags->flush, "<!--comment\ncomment-->");
+is($tags->flush, "<!--comment\ncomment-->", 'Two coments with newline.');
 $tags->reset;
