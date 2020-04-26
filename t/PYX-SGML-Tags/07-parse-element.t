@@ -13,7 +13,7 @@ my $tags = Tags::Output::Raw->new(
 my $obj = PYX::SGML::Tags->new(
 	'tags' => $tags,
 );
-my $pyx_data =<<'END';
+my $pyx_data = <<'END';
 (element
 )element
 END
@@ -22,7 +22,7 @@ is($tags->flush, "<element />");
 $tags->reset;
 
 # Test.
-$pyx_data =<<'END';
+$pyx_data = <<'END';
 (element
 Apar val
 )element
@@ -32,7 +32,7 @@ is($tags->flush, "<element par=\"val\" />");
 $tags->reset;
 
 # Test.
-$pyx_data =<<'END';
+$pyx_data = <<'END';
 (element
 Apar val\nval
 )element
