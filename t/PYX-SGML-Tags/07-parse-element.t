@@ -1,9 +1,10 @@
 use strict;
 use warnings;
 
+use Encode qw(decode_utf8);
 use PYX::SGML::Tags;
 use Tags::Output::Raw;
-use Test::More 'tests' => 4;
+use Test::More 'tests' => 5;
 use Test::NoWarnings;
 
 # Test.
@@ -39,3 +40,15 @@ Apar val\nval
 END
 $obj->parse($pyx_data);
 is($tags->flush, "<element par=\"val\\nval\" />");
+$tags->reset;
+
+# Test.
+$pyx_data = <<'END';
+(čupřina
+Acíl ředkev
+)čupřina
+END
+$obj->parse($pyx_data);
+is($tags->flush, decode_utf8('<čupřina cíl="ředkev" />'),
+	'Parse element with attribute in utf-8.');
+$tags->reset;

@@ -27,6 +27,7 @@ resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
 	'?Name=PYX-SGML-Tags';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/PYX-SGML-Tags';
 resources 'repository' => 'git://github.com/michal-josef-spacek/PYX-SGML-Tags';
+test_requires 'Encode' => 0;
 test_requires 'English' => 0;
 test_requires 'Error::Pure::Utils' => 0.15;
 test_requires 'File::Object' => 0.07;
