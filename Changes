@@ -6,6 +6,7 @@
  - Rename PYX data files to better names (tag → element).
  - Rename PYX data to better names (tag → element).
  - Update Module::Install to 1.19 version.
+ - Update author github username.
  - Update copyright years.
  - Update my name to reality.
 

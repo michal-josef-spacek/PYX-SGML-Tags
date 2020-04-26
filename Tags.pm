@@ -305,7 +305,7 @@ Install the PYX modules.
 
 =head1 REPOSITORY
 
-L<https://github.com/tupinek/PYX-SGML-Tags>
+L<https://github.com/michal-josef-spacek/PYX-SGML-Tags>
 
 =head1 AUTHOR
 
