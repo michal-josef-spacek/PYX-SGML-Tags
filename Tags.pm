@@ -147,6 +147,7 @@ PYX::SGML::Tags - Processing PYX data or file and write as SGML via Tags.
 =head1 SYNOPSIS
 
  use PYX::SGML::Tags;
+
  my $obj = PYX::SGML::Tags->new(%parameters);
  $obj->parse($pyx, $out);
  $obj->parse_file($input_file, $out);

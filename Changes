@@ -2,6 +2,7 @@
  - Add EXAMPLE2 to PYX::SGML::Tags.
  - Add tests for parse() method.
  - Improve LICENSE AND COPYRIGHT section in doc.
+ - Improve SYNOPSIS section in doc.
  - Rename tests to better names (tag → element).
  - Rename PYX data files to better names (tag → element).
  - Rename PYX data to better names (tag → element).
