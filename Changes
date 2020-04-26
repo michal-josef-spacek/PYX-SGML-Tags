@@ -1,5 +1,6 @@
 0.04
  - Add test for utf-8 characters (in Czech).
+ - Add Tags reseting to each test.
  - Test for element renamed to -xml version. Added sgml version.
 
 0.03 2020-04-26T15:28:41+02:00

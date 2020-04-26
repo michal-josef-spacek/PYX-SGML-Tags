@@ -19,8 +19,9 @@ my $obj = PYX::SGML::Tags->new(
 );
 $obj->parse_file($data_dir->file('instruction1.pyx')->s);
 is($tags->flush, '<?target code?>');
+$tags->reset;
 
 # Test.
-$tags->reset;
 $obj->parse_file($data_dir->file('instruction2.pyx')->s);
 is($tags->flush, "<?target data\\ndata?>");
+$tags->reset;

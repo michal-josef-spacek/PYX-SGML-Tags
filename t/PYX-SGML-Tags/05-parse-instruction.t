@@ -20,3 +20,4 @@ $tags->reset;
 # Test.
 $obj->parse('?target data\ndata');
 is($tags->flush, "<?target data\\ndata?>");
+$tags->reset;

@@ -19,8 +19,9 @@ my $obj = PYX::SGML::Tags->new(
 );
 $obj->parse_file($data_dir->file('char1.pyx')->s);
 is($tags->flush, "char");
+$tags->reset;
 
 # Test.
-$tags->reset;
 $obj->parse_file($data_dir->file('char2.pyx')->s);
 is($tags->flush, "char\nchar");
+$tags->reset;

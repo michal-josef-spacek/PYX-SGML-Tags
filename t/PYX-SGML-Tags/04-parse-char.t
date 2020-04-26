@@ -20,3 +20,4 @@ $tags->reset;
 # Test.
 $obj->parse('-char\nchar');
 is($tags->flush, "char\nchar", 'Characters with newline between.');
+$tags->reset;

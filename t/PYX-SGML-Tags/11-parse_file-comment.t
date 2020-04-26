@@ -19,8 +19,9 @@ my $obj = PYX::SGML::Tags->new(
 );
 $obj->parse_file($data_dir->file('comment1.pyx')->s);
 is($tags->flush, '<!--comment-->');
+$tags->reset;
 
 # Test.
-$tags->reset;
 $obj->parse_file($data_dir->file('comment2.pyx')->s);
 is($tags->flush, "<!--comment\ncomment-->");
+$tags->reset;

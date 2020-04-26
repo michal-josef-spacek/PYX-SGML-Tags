@@ -20,3 +20,4 @@ $tags->reset;
 # Test.
 $obj->parse('_comment\ncomment');
 is($tags->flush, "<!--comment\ncomment-->", 'Two coments with newline.');
+$tags->reset;
