@@ -25,24 +25,25 @@ SKIP: {
 		'tags' => $tags,
 	);
 	$obj->parse_file($data_dir->file('element1.pyx')->s);
-	is($tags->flush, "<element />", 'Simple element (xml version).');
+	is($tags->flush, "<?xml version=\"1.1\" encoding=\"UTF-8\"?>\n<element/>\n",
+		'Simple element (xml version).');
 	$tags->reset;
 
 	# Test.
 	$obj->parse_file($data_dir->file('element2.pyx')->s);
-	is($tags->flush, "<element par=\"val\" />",
+	is($tags->flush, "<?xml version=\"1.1\" encoding=\"UTF-8\"?>\n<element par=\"val\"/>\n",
 		'Simple element with attribute (xml version).');
 	$tags->reset;
 
 	# Test.
 	$obj->parse_file($data_dir->file('element3.pyx')->s);
-	is($tags->flush, "<element par=\"val\\nval\" />",
+	is($tags->flush, "<?xml version=\"1.1\" encoding=\"UTF-8\"?>\n<element par=\"val\\nval\"/>\n",
 		'Simple element with attribute with \n in value (xml version).');
 	$tags->reset;
 
 	# Test.
 	$obj->parse_file($data_dir->file('element4.pyx')->s);
-	is($tags->flush, decode_utf8('<čupřina cíl="ředkev" />'),
+	is($tags->flush, "<?xml version=\"1.1\" encoding=\"UTF-8\"?>\n<čupřina cíl=\"ředkev\"/>\n",
 		'Parse element with attribute in utf-8 (xml version).');
 	$tags->reset;
 };
