@@ -12,9 +12,7 @@ use Test::NoWarnings;
 my $data_dir = File::Object->new->up->dir('data');
 
 # Test.
-my $tags = Tags::Output::Raw->new(
-	'xml' => 0,
-);
+my $tags = Tags::Output::Raw->new;
 my $obj = PYX::SGML::Tags->new(
 	'tags' => $tags,
 );

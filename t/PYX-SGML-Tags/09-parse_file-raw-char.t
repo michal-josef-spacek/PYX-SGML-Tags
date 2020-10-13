@@ -4,7 +4,7 @@ use warnings;
 use File::Object;
 use PYX::SGML::Tags;
 use Tags::Output::Raw;
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 
 # Directories.
@@ -24,4 +24,9 @@ $tags->reset;
 # Test.
 $obj->parse_file($data_dir->file('char2.pyx')->s);
 is($tags->flush, "char\nchar", 'Character with newline.');
+$tags->reset;
+
+# Test.
+$obj->parse_file($data_dir->file('char3.pyx')->s);
+is($tags->flush, "charchar", 'Two data characters.');
 $tags->reset;

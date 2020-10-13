@@ -3,7 +3,7 @@ use warnings;
 
 use PYX::SGML::Tags;
 use Tags::Output::Raw;
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 
 # Test.
@@ -20,4 +20,9 @@ $tags->reset;
 # Test.
 $obj->parse('-char\nchar');
 is($tags->flush, "char\nchar", 'Characters with newline between.');
+$tags->reset;
+
+# Test.
+$obj->parse("-char\n-char");
+is($tags->flush, "charchar", 'Two data characters.');
 $tags->reset;

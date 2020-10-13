@@ -23,6 +23,6 @@ $tags->reset;
 
 # Test.
 $obj->parse_file($data_dir->file('instruction2.pyx')->s);
-is($tags->flush, "<?target data\\ndata?>",
+is($tags->flush, '<?target data\ndata?>',
 	'Instruction with newline in data section.');
 $tags->reset;
