@@ -1,4 +1,5 @@
 0.05
+ - Add 'input_tags_item_callback' parameter for e.g.validation.
  - Add tests for output via libxml.
  - Rename test files to better names (raw tests).
  - Rewrite to better default of 'tags' parameter.

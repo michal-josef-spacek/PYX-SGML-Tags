@@ -19,6 +19,9 @@ sub new {
 	# Input encoding.
 	$self->{'input_encoding'} = 'utf-8';
 
+	# Input 'Tags' item callback.
+	$self->{'input_tags_item_callback'} = undef;
+
 	# Tags object.
 	$self->{'tags'} = undef;
 
@@ -27,6 +30,8 @@ sub new {
 
 	if (! defined $self->{'tags'}) {
 		$self->{'tags'} = Tags::Output::Raw->new(
+			'input_tags_item_callback'
+				=> $self->{'input_tags_item_callback'},
 			'output_handler' => \*STDOUT,
 		);
 	}
@@ -171,6 +176,12 @@ Constructor.
  Input encoding.
  Default value is 'utf-8'.
 
+=item * C<input_tags_item_callback>
+
+ Input 'Tags' item callback.
+ This callback is for Tags::Output::* constructor parameter 'input_tags_item_callback'.
+ Default value is undef.
+
 =item * C<tags>
 
  Tags object.
@@ -286,6 +297,40 @@ Constructor.
  print "\n";
 
  # Output:
+ # <element>data</element>
+
+=head1 EXAMPLE3
+
+ use strict;
+ use warnings;
+
+ use PYX::SGML::Tags;
+ use Tags::Output::Indent;
+
+ # Input.
+ my $pyx = <<'END';
+ (element
+ -data
+ )element
+ END
+
+ # Object.
+ my $obj = PYX::SGML::Tags->new(
+         'input_tags_item_callback' => sub {
+                 my $tags_ar = shift;
+                 print '[ '.$tags_ar->[0].' ]'."\n";
+                 return;
+         },
+ );
+
+ # Process.
+ $obj->parse($pyx);
+ print "\n";
+
+ # Output:
+ # [ b ]
+ # [ d ]
+ # [ e ]
  # <element>data</element>
 
 =head1 DEPENDENCIES
