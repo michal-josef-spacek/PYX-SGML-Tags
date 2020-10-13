@@ -1,11 +1,11 @@
 use strict;
 use warnings;
 
-use Encode qw(decode_utf8);
 use PYX::SGML::Tags;
 use Tags::Output::Raw;
 use Test::More 'tests' => 5;
 use Test::NoWarnings;
+use Unicode::UTF8 qw(decode_utf8);
 
 # Test.
 my $tags = Tags::Output::Raw->new(

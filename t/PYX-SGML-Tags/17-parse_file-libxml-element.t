@@ -1,10 +1,10 @@
 use strict;
 use warnings;
 
-use Encode qw(decode_utf8);
 use English;
 use File::Object;
 use PYX::SGML::Tags;
+use Unicode::UTF8 qw(decode_utf8);
 use Test::More 'tests' => 5;
 use Test::NoWarnings;
 

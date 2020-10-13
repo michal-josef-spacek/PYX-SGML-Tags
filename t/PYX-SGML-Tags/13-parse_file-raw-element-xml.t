@@ -1,12 +1,12 @@
 use strict;
 use warnings;
 
-use Encode qw(decode_utf8);
 use File::Object;
 use PYX::SGML::Tags;
 use Tags::Output::Raw;
 use Test::More 'tests' => 5;
 use Test::NoWarnings;
+use Unicode::UTF8 qw(decode_utf8);
 
 # Directories.
 my $data_dir = File::Object->new->up->dir('data');
