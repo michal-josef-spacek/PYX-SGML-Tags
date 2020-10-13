@@ -24,7 +24,7 @@ SKIP: {
 		'tags' => $tags,
 	);
 	$obj->parse_file($data_dir->file('char1.pyx')->s);
-	is($tags->flush, "char", 'Simple character.');
+	is($tags->flush, 'char', 'Simple character.');
 	$tags->reset;
 
 	# Test.
@@ -34,6 +34,6 @@ SKIP: {
 
 	# Test.
 	$obj->parse_file($data_dir->file('char3.pyx')->s);
-	is($tags->flush, "char char", 'Two data characters.');
+	is($tags->flush, 'char char', 'Two data characters.');
 	$tags->reset;
 };
