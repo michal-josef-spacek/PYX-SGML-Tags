@@ -1,4 +1,5 @@
 0.05
+ - Add test stubs for libxml tests.
  - Rename test files to better names (raw tests).
 
 0.04 2020-04-26T18:32:33+02:00

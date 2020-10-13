@@ -42,6 +42,10 @@ t/PYX-SGML-Tags/10-parse_file-raw-instruction.t
 t/PYX-SGML-Tags/11-parse_file-raw-comment.t
 t/PYX-SGML-Tags/12-parse_file-raw-element-sgml.t
 t/PYX-SGML-Tags/13-parse_file-raw-element-xml.t
+t/PYX-SGML-Tags/14-parse_file-libxml-char.t
+t/PYX-SGML-Tags/15-parse_file-libxml-instruction.t
+t/PYX-SGML-Tags/16-parse_file-libxml-comment.t
+t/PYX-SGML-Tags/17-parse_file-libxml-element.t
 Tags.pm
 xt/PYX-SGML-Tags/01-pod_coverage.t
 xt/PYX-SGML-Tags/02-pod.t
