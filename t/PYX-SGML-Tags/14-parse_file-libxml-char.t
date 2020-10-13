@@ -4,7 +4,7 @@ use warnings;
 use English;
 use File::Object;
 use PYX::SGML::Tags;
-use Test::More 'tests' => 3;
+use Test::More 'tests' => 4;
 use Test::NoWarnings;
 
 SKIP: {
@@ -23,17 +23,26 @@ SKIP: {
 	my $obj = PYX::SGML::Tags->new(
 		'tags' => $tags,
 	);
-	$obj->parse_file($data_dir->file('char1.pyx')->s);
-	is($tags->flush, 'char', 'Simple character.');
+	eval {
+		$obj->parse_file($data_dir->file('char1.pyx')->s);
+	};
+	like($EVAL_ERROR, qr{^Can't call method "addChild" on an undefined value},
+		'Not possible add data without root element.');
 	$tags->reset;
 
 	# Test.
-	$obj->parse_file($data_dir->file('char2.pyx')->s);
-	is($tags->flush, "char\nchar", 'Character with newline.');
+	eval {
+		$obj->parse_file($data_dir->file('char2.pyx')->s);
+	};
+	like($EVAL_ERROR, qr{^Can't call method "addChild" on an undefined value},
+		'Not possible add data without root element.');
 	$tags->reset;
 
 	# Test.
-	$obj->parse_file($data_dir->file('char3.pyx')->s);
-	is($tags->flush, 'char char', 'Two data characters.');
+	eval {
+		$obj->parse_file($data_dir->file('char3.pyx')->s);
+	};
+	like($EVAL_ERROR, qr{^Can't call method "addChild" on an undefined value},
+		'Not possible add data without root element.');
 	$tags->reset;
 };

@@ -3,7 +3,9 @@ TODO
 4. Pridat testy pro parse_handler().
 5. Priklad pro finalize().
 6. Zmenit bugtracker
-7.
+7. Az Tags::Output nebo Tags::Output::LibXML nebude moci vytvorit data bez root
+   elementu a vyhodi error, tak opravit test.
+8.
 
 Applied
 =======
