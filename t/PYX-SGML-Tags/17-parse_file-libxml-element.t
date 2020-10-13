@@ -4,9 +4,9 @@ use warnings;
 use English;
 use File::Object;
 use PYX::SGML::Tags;
-use Unicode::UTF8 qw(decode_utf8);
 use Test::More 'tests' => 5;
 use Test::NoWarnings;
+use Unicode::UTF8 qw(decode_utf8);
 
 SKIP: {
 	eval {
