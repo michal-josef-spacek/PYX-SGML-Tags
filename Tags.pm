@@ -20,17 +20,19 @@ sub new {
 	$self->{'input_encoding'} = 'utf-8';
 
 	# Tags object.
-	$self->{'tags'} = Tags::Output::Raw->new(
-		'output_handler' => \*STDOUT,
-	);
+	$self->{'tags'} = undef;
 
 	# Process params.
 	set_params($self, @params);
 
-	# Check for Tags::Output object.
-	if (! $self->{'tags'}
-		|| ! $self->{'tags'}->isa('Tags::Output')) {
+	if (! defined $self->{'tags'}) {
+		$self->{'tags'} = Tags::Output::Raw->new(
+			'output_handler' => \*STDOUT,
+		);
+	}
 
+	# Check for Tags::Output object.
+	if (! $self->{'tags'}->isa('Tags::Output')) {
 		err "Bad 'Tags::Output::*' object.";
 	}
 
