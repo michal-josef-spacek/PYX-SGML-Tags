@@ -1,4 +1,5 @@
 0.06
+ - Change bugtracker to github.
  - Fix tests for situation when Tags::Output::LibXML not present.
 
 0.05 2020-10-14T01:03:12+02:00
