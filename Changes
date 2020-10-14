@@ -1,4 +1,4 @@
-0.06
+0.06 2020-10-14T09:13:41+02:00
  - Add tests for finalize().
  - Change bugtracker to github.
  - Fix tests for situation when Tags::Output::LibXML not present.
