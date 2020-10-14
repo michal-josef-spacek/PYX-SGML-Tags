@@ -14,6 +14,7 @@ our $VERSION = 0.06;
 # Constructor.
 sub new {
 	my ($class, @params) = @_;
+
 	my $self = bless {}, $class;
 
 	# Input encoding.
@@ -64,78 +65,98 @@ sub new {
 # Parse pyx text or array of pyx text.
 sub parse {
 	my ($self, $pyx, $out) = @_;
+
 	$self->{'pyx_parser'}->parse($pyx, $out);
 	$self->{'tags'}->flush;
+
 	return;
 }
 
 # Parse file with pyx text.
 sub parse_file {
 	my ($self, $file, $out) = @_;
+
 	$self->{'pyx_parser'}->parse_file($file, $out);
 	$self->{'tags'}->flush;
+
 	return;
 }
 
 # Parse from handler.
 sub parse_handler {
 	my ($self, $input_file_handler, $out) = @_;
+
 	$self->{'pyx_parser'}->parse_handler($input_file_handler, $out);
 	$self->{'tags'}->flush;
+
 	return;
 }
 
 sub finalize {
 	my $self = shift;
+
 	$self->{'tags'}->finalize;
+
 	return;
 }
 
 # Process start of element.
 sub _start_element {
 	my ($self, $elem) = @_;
+
 	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['b', $elem]);
+
 	return;
 }
 
 # Process end of element.
 sub _end_element {
 	my ($self, $elem) = @_;
+
 	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['e', $elem]);
+
 	return;
 }
 
 # Process data.
 sub _data {
 	my ($self, $data) = @_;
+
 	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['d', encode($data)]);
+
 	return;
 }
 
 # Process attribute.
 sub _attribute {
 	my ($self, $attr, $value) = @_;
+
 	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['a', $attr, $value]);
+
 	return;
 }
 
 # Process instruction tag.
 sub _instruction {
 	my ($self, $target, $code) = @_;
+
 	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['i', $target, $code]);
+
 	return;
 }
 
 # Process comments.
 sub _comment {
 	my ($self, $comment) = @_;
+
 	my $tags = $self->{'non_parser_options'}->{'tags'};
 	$tags->put(['c', encode($comment)]);
+
 	return;
 }
 
