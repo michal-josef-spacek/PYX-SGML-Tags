@@ -12,7 +12,7 @@ SKIP: {
 		require Tags::Output::LibXML;
 	};
 	if ($EVAL_ERROR) {
-		skip "Module 'Tags::Output::LibXML' isn't present.", 2;
+		skip "Module 'Tags::Output::LibXML' isn't present.", 3;
 	}
 
 	# Directories.
