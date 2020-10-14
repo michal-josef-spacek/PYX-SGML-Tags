@@ -12,47 +12,61 @@ SYNOPSIS
      $obj->finalize;
 
 METHODS
-    "new()" Constructor.
+  "new"
+     my $obj = PYX::SGML::Tags->new(%parameters);
 
-            *       "input_encoding"
+    Constructor.
 
-                     Input encoding.
-                     Default value is 'utf-8'.
+    Returns instance of class.
 
-            *       "input_tags_item_callback"
+    *       "input_encoding"
 
-                     Input 'Tags' item callback.
-                     This callback is for Tags::Output::* constructor parameter 'input_tags_item_callback'.
-                     Default value is undef.
+            Input encoding.
 
-            *       "tags"
+            Default value is 'utf-8'.
 
-                     Tags object.
-                     Can be any of Tags::Output::* objects.
-                     Default value is Tags::Output::Raw->new('output_handler' => \*STDOUT).
-                     It's required.
+    *       "input_tags_item_callback"
 
-    "parse($pyx[, $out])"
-             Parse PYX text or array of PYX text.
-             Output is serialization to SGML by Tags::Output::* module.
-             If $out not present, use 'output_handler'.
-             Returns undef.
+            Input 'Tags' item callback. This callback is for Tags::Output::*
+            constructor parameter 'input_tags_item_callback'.
 
-    "parse_file($input_file[, $out])"
-             Parse file with PYX data.
-             Output is serialization to SGML.
-             If $out not present, use 'output_handler'.
-             Returns undef.
+            Default value is undef.
 
-    "parse_handler($input_file_handler[, $out])"
-             Parse PYX handler.
-             Output is serialization to SGML.
-             If $out not present, use 'output_handler'.
-             Returns undef.
+    *       "tags"
 
-    "finalize()"
-             Finalize opened tags, if exists.
-             Returns undef.
+            Tags object. Can be any of Tags::Output::* objects. Default
+            value is "Tags::Output::Raw-"new('output_handler' => \*STDOUT)>.
+            It's required.
+
+  "parse"
+     $obj->parse($pyx, $out);
+
+    Parse PYX text or array of PYX text. Output is serialization to SGML by
+    Tags::Output::* module. If $out not present, use 'output_handler'.
+
+    Returns undef.
+
+  "parse_file"
+     $obj->parse_file($input_file, $out);
+
+    Parse file with PYX data. Output is serialization to SGML. If $out not
+    present, use 'output_handler'.
+
+    Returns undef.
+
+  "parse_handler"
+     $obj->parse_handle($input_file_handler, $out);
+
+    Parse PYX handler. Output is serialization to SGML. If $out not present,
+    use 'output_handler'.
+
+    Returns undef.
+
+  "finalize"
+     $obj->finalize;
+
+     Finalize opened tags, if exists.
+     Returns undef.
 
 ERRORS
      new():

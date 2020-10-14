@@ -184,61 +184,74 @@ PYX::SGML::Tags - Processing PYX data or file and write as SGML via Tags.
 
 =head1 METHODS
 
-=over 8
+=head2 C<new>
 
-=item C<new()>
+ my $obj = PYX::SGML::Tags->new(%parameters);
 
 Constructor.
+
+Returns instance of class.
 
 =over 8
 
 =item * C<input_encoding>
 
- Input encoding.
- Default value is 'utf-8'.
+Input encoding.
+
+Default value is 'utf-8'.
 
 =item * C<input_tags_item_callback>
 
- Input 'Tags' item callback.
- This callback is for Tags::Output::* constructor parameter 'input_tags_item_callback'.
- Default value is undef.
+Input 'Tags' item callback.
+This callback is for Tags::Output::* constructor parameter 'input_tags_item_callback'.
+
+Default value is undef.
 
 =item * C<tags>
 
- Tags object.
- Can be any of Tags::Output::* objects.
- Default value is Tags::Output::Raw->new('output_handler' => \*STDOUT).
- It's required.
+Tags object.
+Can be any of Tags::Output::* objects.
+Default value is C<Tags::Output::Raw->new('output_handler' => \*STDOUT)>.
+It's required.
 
 =back
 
-=item C<parse($pyx[, $out])>
+=head2 C<parse>
 
- Parse PYX text or array of PYX text.
- Output is serialization to SGML by Tags::Output::* module.
- If $out not present, use 'output_handler'.
- Returns undef.
+ $obj->parse($pyx, $out);
 
-=item C<parse_file($input_file[, $out])>
+Parse PYX text or array of PYX text.
+Output is serialization to SGML by Tags::Output::* module.
+If C<$out> not present, use 'output_handler'.
 
- Parse file with PYX data.
- Output is serialization to SGML.
- If $out not present, use 'output_handler'.
- Returns undef.
+Returns undef.
 
-=item C<parse_handler($input_file_handler[, $out])>
+=head2 C<parse_file>
 
- Parse PYX handler.
- Output is serialization to SGML.
- If $out not present, use 'output_handler'.
- Returns undef.
+ $obj->parse_file($input_file, $out);
 
-=item C<finalize()>
+Parse file with PYX data.
+Output is serialization to SGML.
+If C<$out> not present, use 'output_handler'.
+
+Returns undef.
+
+=head2 C<parse_handler>
+
+ $obj->parse_handle($input_file_handler, $out);
+
+Parse PYX handler.
+Output is serialization to SGML.
+If C<$out> not present, use 'output_handler'.
+
+Returns undef.
+
+=head2 C<finalize>
+
+ $obj->finalize;
 
  Finalize opened tags, if exists.
  Returns undef.
-
-=back
 
 =head1 ERRORS
 
