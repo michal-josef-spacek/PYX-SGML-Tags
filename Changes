@@ -1,4 +1,4 @@
-0.07
+0.07 2021-02-20T21:25:19+01:00
  - Add 'output_encoding' parameter.
  - Rewrite implicit encode() to PYX::Utils::encode().
  - Update copyright years.
