@@ -6,7 +6,7 @@ use warnings;
 use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use PYX::Parser;
-use PYX::Utils qw(encode);
+use PYX::Utils;
 use Tags::Output::Raw;
 
 our $VERSION = 0.07;
@@ -125,7 +125,7 @@ sub _data {
 	my ($self, $data) = @_;
 
 	my $tags = $self->{'non_parser_options'}->{'tags'};
-	$tags->put(['d', encode($data)]);
+	$tags->put(['d', PYX::Utils::encode($data)]);
 
 	return;
 }
@@ -155,7 +155,7 @@ sub _comment {
 	my ($self, $comment) = @_;
 
 	my $tags = $self->{'non_parser_options'}->{'tags'};
-	$tags->put(['c', encode($comment)]);
+	$tags->put(['c', PYX::Utils::encode($comment)]);
 
 	return;
 }
