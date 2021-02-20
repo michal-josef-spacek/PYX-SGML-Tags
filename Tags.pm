@@ -9,7 +9,7 @@ use PYX::Parser;
 use PYX::Utils;
 use Tags::Output::Raw;
 
-our $VERSION = 0.07;
+our $VERSION = 0.08;
 
 # Constructor.
 sub new {
@@ -413,6 +413,6 @@ BSD 2-Clause License
 
 =head1 VERSION
 
-0.07
+0.08
 
 =cut
