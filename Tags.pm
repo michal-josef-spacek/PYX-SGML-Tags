@@ -23,6 +23,9 @@ sub new {
 	# Input 'Tags' item callback.
 	$self->{'input_tags_item_callback'} = undef;
 
+	# Output encoding.
+	$self->{'output_encoding'} = 'utf-8';
+
 	# Tags object.
 	$self->{'tags'} = undef;
 
@@ -33,6 +36,7 @@ sub new {
 		$self->{'tags'} = Tags::Output::Raw->new(
 			'input_tags_item_callback'
 				=> $self->{'input_tags_item_callback'},
+			'output_encoding' => $self->{'output_encoding'},
 			'output_handler' => \*STDOUT,
 		);
 	}
@@ -206,6 +210,12 @@ Input 'Tags' item callback.
 This callback is for Tags::Output::* constructor parameter 'input_tags_item_callback'.
 
 Default value is undef.
+
+=item * C<output_encoding>
+
+Output encoding.
+
+Default value is 'utf-8'.
 
 =item * C<tags>
 

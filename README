@@ -32,6 +32,12 @@ METHODS
 
             Default value is undef.
 
+    *       "output_encoding"
+
+            Output encoding.
+
+            Default value is 'utf-8'.
+
     *       "tags"
 
             Tags object. Can be any of Tags::Output::* objects. Default
