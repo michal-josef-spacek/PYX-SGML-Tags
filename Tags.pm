@@ -200,7 +200,7 @@ Returns instance of class.
 
 =item * C<input_encoding>
 
-Input encoding.
+Input encoding for parse_file() and parse_handler() usage.
 
 Default value is 'utf-8'.
 
@@ -241,6 +241,7 @@ Returns undef.
  $obj->parse_file($input_file, $out);
 
 Parse file with PYX data.
+C<$input_file> file is decoded by 'input_encoding'.
 Output is serialization to SGML.
 If C<$out> not present, use 'output_handler'.
 
@@ -251,6 +252,7 @@ Returns undef.
  $obj->parse_handle($input_file_handler, $out);
 
 Parse PYX handler.
+C<$input_file_handler> handler is decoded by 'input_encoding'.
 Output is serialization to SGML.
 If C<$out> not present, use 'output_handler'.
 
