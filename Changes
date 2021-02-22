@@ -1,4 +1,4 @@
-0.08
+0.08 2021-02-22T17:51:23+01:00
  - Change api of parse(): Don't decode utf-8 string via 'input_encoding'.
 
 0.07 2021-02-20T21:25:19+01:00
