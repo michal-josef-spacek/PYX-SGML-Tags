@@ -7,8 +7,8 @@ build_requires:
   Error::Pure::Utils: 0.15
   ExtUtils::MakeMaker: 6.36
   File::Object: 0.07
-  Tags::Output::Indent: 0
-  Tags::Output::Raw: 0
+  Tags::Output::Indent: 0.09
+  Tags::Output::Raw: 0.13
   Test::More: 0
   Test::NoWarnings: 0
   Unicode::UTF8: 0
