@@ -1,4 +1,5 @@
 0.09
+ - Update copyright years.
 
 0.08 2021-02-22T17:51:23+01:00
  - Change api of parse(): Don't decode utf-8 string via 'input_encoding'.
