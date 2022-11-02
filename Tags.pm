@@ -294,6 +294,8 @@ Returns undef.
 
 =head1 EXAMPLE1
 
+=for comment filename=simple_element_raw.pl
+
  use strict;
  use warnings;
 
@@ -317,6 +319,8 @@ Returns undef.
  # <element>data</element>
 
 =head1 EXAMPLE2
+
+=for comment filename=simple_element_indent.pl
 
  use strict;
  use warnings;
@@ -346,6 +350,8 @@ Returns undef.
  # <element>data</element>
 
 =head1 EXAMPLE3
+
+=for comment filename=simple_element_callback.pl
 
  use strict;
  use warnings;

@@ -1,5 +1,6 @@
 0.09
  - Fix minimal versions of Tags::Output:: for tests. There was warning.
+ - Rename examples to better names.
  - Update copyright years.
 
 0.08 2021-02-22T17:51:23+01:00
