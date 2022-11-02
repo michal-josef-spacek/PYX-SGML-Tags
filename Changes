@@ -1,4 +1,4 @@
-0.09
+0.09 2022-11-02T23:25:09+01:00
  - Fix minimal versions of Tags::Output:: for tests. There was warning.
  - Rename examples to better names.
  - Update copyright years.
