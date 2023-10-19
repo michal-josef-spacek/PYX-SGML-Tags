@@ -194,8 +194,6 @@ PYX::SGML::Tags - Processing PYX data or file and write as SGML via Tags.
 
 Constructor.
 
-Returns instance of class.
-
 =over 8
 
 =item * C<input_encoding>
@@ -225,6 +223,8 @@ Default value is C<Tags::Output::Raw->new('output_handler' => \*STDOUT)>.
 It's required.
 
 =back
+
+Returns instance of class.
 
 =head2 C<parse>
 

@@ -1,5 +1,6 @@
 0.10
  - Fix typo in doc.
+ - Improve constructor doc.
  - Update Module::Install to 1.21 version.
  - Update copyright years.
 

@@ -17,8 +17,6 @@ METHODS
 
     Constructor.
 
-    Returns instance of class.
-
     *       "input_encoding"
 
             Input encoding for parse_file() and parse_handler() usage.
@@ -43,6 +41,8 @@ METHODS
             Tags object. Can be any of Tags::Output::* objects. Default
             value is "Tags::Output::Raw-"new('output_handler' => \*STDOUT)>.
             It's required.
+
+    Returns instance of class.
 
   "parse"
      $obj->parse($pyx, $out);
