@@ -1,5 +1,6 @@
 0.10
  - Fix typo in doc.
+ - Update Module::Install to 1.21 version.
 
 0.09 2022-11-02T23:25:09+01:00
  - Fix minimal versions of Tags::Output:: for tests. There was warning.
